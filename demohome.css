@@ -1,11 +1,17 @@
 #header{
     height:55px !important ; 
-    background-color:#1b1a19 !important;
+    /* background-color:#1b1a19 !important; */
 }
 
 body {
     background-color:#1b1a19;
     width: 98.999%;
+}
+
+#modebtn{
+    background-color:#1b1a19;
+    margin-top: 15px;
+    margin-right: 17px;
 }
 
 .slogo{
@@ -24,7 +30,7 @@ body {
     width:5%;
     /* border:2px solid green; */
     float: left;
-    background-color:#282726;
+    /* background-color:#282726; */
 }
 
 .glyphicon{
@@ -38,7 +44,7 @@ body {
     height: 97%;
     width: 94.7%;
     display: inline-block;
-    border:2px solid #222121;
+    /* border:2px solid #222121; */
 }
 
 #subcont2{
@@ -84,6 +90,7 @@ body {
 .subsectcont{
     height:80%;
     border:2px solid rgb(27 26 25) !important;
+    background-color: rgb(42 39 39);
 }
 
 .moviedetails{
@@ -134,6 +141,7 @@ body {
     text-align:center;
     color:white;
     border:2px solid #1b1a19;
+    background-color: rgb(42 39 39);
 }
 
 #more{
@@ -144,14 +152,14 @@ body {
     text-align: center;
     font-size: 20px;
     color: rgb(216, 212, 212);
-    
+    background-color: rgb(42 39 39);
 }
 
 .footheading{
     color:white;
     font-size:30px;
     padding-left: 10px;
-    background-color:#282726;
+    /* background-color:#282726; */
 }
 
 #footcont{
@@ -187,7 +195,8 @@ body {
     width: 100%;
     margin-top: 15%;
     margin-left: 10px;
-    border: 1px solid rgb(42, 42, 43);
+    /* border: 1px solid rgb(42, 42, 43); */
+    
 
 }
 
@@ -202,4 +211,25 @@ body {
     padding-left: 2%;
     padding-top: 0.7%;
     float: left;
+    color: black;
+}
+
+#coupon{
+    z-index: 100;
+    position: absolute;
+    display: none;
+    margin-left: 27%;
+    margin-top: 12%;
+    backdrop-filter: blur(100px);
+}
+
+#coupon>img{
+    height: 100%;
+    width: 100%;
+}
+
+#couponclose{
+    margin-left: 93.8%;
+    margin-top: 2%;
+    position: absolute;
 }

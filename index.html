@@ -4,10 +4,38 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <link href="first.css" rel="stylesheet"/>
         <link rel="stylesheet" href="demohome.css"/>
+        <script src="demohome.js"></script>
+        <style>
+            body{
+                background-color: #1b1a19;
+                color:rgb(167, 161, 161)
+            }
+            .mydark{
+                background-color: #b6ab97;
+                color:rgb(238, 221, 190)
+            }
+        </style>
+        <script>
+            function changeMode(){
+                let mybody = document.body;
+                mybody.classList.toggle('mydark')
+            }
+        </script>
     </head>
     <body>
+        
+        <div>
+            <div id="coupon">
+                <button id="couponclose" onClick="closeCoupon()">&times;</button>
+                <img src="images/netflixcoupon.jpg" alt="netflix coupon"/>
+            </div>
+        </div>
+        <script>
+            window.onload = loadCoupon()
+        </script>
+
+
         <div id="header">
             <nav class="navbar navbar-light">
                 <div class="navbar-fluid">
@@ -38,6 +66,7 @@
                             <li>
                                 <a href="">My List</a>
                             </li>
+                           
                         </ul>
                     
                         <ul class="nav navbar-nav navbar-right">
@@ -50,6 +79,10 @@
                                         <span class="glyphicon glyphicon-log-in"> Login</span>
                                     </a>
                                 </li>
+                                <li>
+                                    <button id="modebtn" onClick="changeMode()"> Mode</button> 
+                                 </li>
+                            </li>
                             </ul>
                         </ul>
                     </div>
