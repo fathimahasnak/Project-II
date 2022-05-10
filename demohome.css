@@ -9,9 +9,24 @@ body {
 }
 
 #modebtn{
-    background-color:#1b1a19;
-    margin-top: 15px;
-    margin-right: 17px;
+    /* background-color:#1b1a19; */
+    /* margin-top: 14px; */
+    margin-right: 20px;
+    margin-left: 10px;
+    font-size: 22px;
+}
+
+
+/* #icon>img{
+    margin-top: -6px;
+    margin-right: 10px;
+} */
+
+#wetherglyph{
+    margin-top: 7px;
+    margin-left: 20px;
+    margin-right: 27px;
+    font-size: 23px;
 }
 
 .slogo{
@@ -153,6 +168,10 @@ body {
     font-size: 20px;
     color: rgb(216, 212, 212);
     background-color: rgb(42 39 39);
+}
+
+#footer{
+    margin-left: 80px;
 }
 
 .footheading{

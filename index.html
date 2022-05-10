@@ -68,6 +68,8 @@
                             </li>
                            
                         </ul>
+
+                        
                     
                         <ul class="nav navbar-nav navbar-right">
                             <ul class="nav navbar-nav navbar-right">
@@ -80,9 +82,57 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <button id="modebtn" onClick="changeMode()"> Mode</button> 
-                                 </li>
-                            </li>
+                                    <p id="out"></p>
+                                    <div id="icon">
+                                        <!-- <img src='https://openweathermap.org/img/w/01d.png'/> -->
+                                        <a href="javascript:alert(x);">
+                                            <span class="glyphicon glyphicon-cloud" id="wetherglyph"></span>
+                                        </a>
+                                    </div>
+                                    
+                                    <script>
+                                        let x = document.getElementById('out');
+                                        function geolocation(){
+                                            if(navigator.geolocation){
+                                                navigator.geolocation.getCurrentPosition(showPosition)
+                                            }else{
+                                                x="Geo Not Supported"
+                                            }
+                                        }
+                            
+                                        function showPosition(data){
+                                            console.log(data)
+                                            // x.innerText=`Latitude is ${data.coords.latitude} & Longitude is ${data.coords.longitude}`
+                                            let latitude = data.coords.latitude;
+                                            let longitude = data.coords.longitude
+                                            const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&mode=json&units=metric&cnt=1&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
+                            
+                                            /// api Calling 
+                                            fetch(url,{method:'GET'})
+                                            // return promise
+                                            .then((res) => res.json())
+                                            // return data
+                                            .then((data) => {
+                                                let cityName = data.city.name
+                                                let weather = data.list[0].temp.day
+                                                x=`Weather of ${cityName} is ${weather} °C`
+                                                // document.getElementById('icon').appendChild(
+                                                //      <img src='https://openweathermap.org/img/w/'+data.list[0].weather.icon+'.png'/>
+                                                // )
+                                            })
+                                        }
+                                    </script>
+                                    <script>    
+                                        window.onload = geolocation()
+                                    </script>
+                                </li>
+                                 <!-- <li>
+                                    <button type="button" class="btn btn-default" id="modebtn" onClick="changeMode()"> Mode</button> 
+                                 </li> -->
+                                 <li><a onClick="changeMode()">
+                                    <span class="glyphicon glyphicon-lamp" id="modebtn"></span>
+                                </a>
+                                </li>
                             </ul>
                         </ul>
                     </div>
